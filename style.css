@@ -1,46 +1,71 @@
-body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #f9c5d1, #fbc8d4);
-    color: #333;
+* {
+    box-sizing: border-box;
 }
 
-.container {
-    max-width: 800px;
-    margin: auto;
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 20px;
-    text-align: center;
+}
+
+.card {
+    background: white;
+    max-width: 900px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    animation: fadeIn 1.2s ease;
 }
 
 h1 {
-    font-size: 2.2em;
+    text-align: center;
+    font-size: 2.4em;
     margin-bottom: 20px;
 }
 
-.text {
-    font-size: 1.1em;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    background: rgba(255, 255, 255, 0.6);
+.message {
+    font-size: 1.15em;
+    line-height: 1.7;
+    text-align: center;
+    background: #fff0f4;
     padding: 20px;
     border-radius: 15px;
+    margin-bottom: 30px;
 }
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 15px;
 }
 
 .gallery img {
     width: 100%;
-    border-radius: 15px;
+    height: 200px;
     object-fit: cover;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    border-radius: 18px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.footer {
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.signature {
     margin-top: 30px;
+    text-align: center;
     font-size: 1.2em;
     font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
