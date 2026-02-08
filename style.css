@@ -91,3 +91,54 @@ button {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+.link-button {
+    display: block;
+    margin-top: 25px;
+    text-align: center;
+    padding: 12px;
+    border-radius: 15px;
+    background: #ee9ca7;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dates {
+    margin: 25px 0;
+}
+
+.date-item {
+    background: #fff0f4;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.05em;
+}
+
+.phrase {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.heart {
+    position: fixed;
+    font-size: 20px;
+    color: #ff5c8a;
+    pointer-events: none;
+    animation: floatUp 1.5s ease forwards;
+    z-index: 9999;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-80px) scale(1.6);
+        opacity: 0;
+    }
+}
