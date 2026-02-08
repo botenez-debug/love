@@ -21,3 +21,15 @@ function toggleSecret() {
     const el = document.getElementById("secret");
     el.style.display = el.style.display === "block" ? "none" : "block";
 }
+const phrases = [
+    "Ты — лучшее, что со мной случалось ❤️",
+    "Если ты когда нибудь подумаешь о том что я тебя не люблю это нитак знай ",
+    "Я люблюююююю тебя моя радость 😊",
+    "Ты — мое все!!",
+    "С тобой я готов пойти на все милая 💞"
+];
+
+function showPhrase() {
+    const random = Math.floor(Math.random() * phrases.length);
+    document.getElementById("phrase").innerText = phrases[random];
+}
