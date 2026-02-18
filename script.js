@@ -1,8 +1,11 @@
-// ⚠️ ВАЖНО: укажи дату начала отношений
+// ⚠️ Дата начала отношений
 // Формат: ГОД, МЕСЯЦ-1, ДЕНЬ, ЧАС, МИНУТА
-const startDate = new Date(2025, 1, 1, 18, 30);
+const startDate = new Date(2025, 0, 1, 18, 30); // январь = 0
 
 function updateTimer() {
+    const el = document.getElementById("timeTogether");
+    if (!el) return; // если элемента нет — просто выходим (чтобы не было ошибки)
+
     const now = new Date();
     const diff = now - startDate;
 
@@ -10,8 +13,7 @@ function updateTimer() {
     const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((diff / (1000 * 60)) % 60);
 
-    document.getElementById("timeTogether").innerText =
-        `${days} дней ${hours} часов ${minutes} минут`;
+    el.innerText = `${days} дней ${hours} часов ${minutes} минут`;
 }
 
 setInterval(updateTimer, 1000);
@@ -19,20 +21,27 @@ updateTimer();
 
 function toggleSecret() {
     const el = document.getElementById("secret");
+    if (!el) return;
     el.style.display = el.style.display === "block" ? "none" : "block";
 }
+
 const phrases = [
     "Ты — лучшее, что со мной случалось ❤️",
-    "Если ты когда нибудь подумаешь о том что я тебя не люблю это нитак знай ",
+    "Если ты когда-нибудь подумаешь, что я тебя не люблю — это не так, знай ❤️",
     "Я люблюююююю тебя моя радость 😊",
-    "Ты — мое все!!",
-    "С тобой я готов пойти на все милая 💞"
+    "Ты — моё всё!! 💖",
+    "С тобой я готов пойти на всё, милая 💞"
 ];
 
 function showPhrase() {
+    const el = document.getElementById("phrase");
+    if (!el) return;
+
     const random = Math.floor(Math.random() * phrases.length);
-    document.getElementById("phrase").innerText = phrases[random];
+    el.innerText = phrases[random];
 }
+
+// Сердечки при клике
 document.addEventListener("click", function (e) {
     const heart = document.createElement("div");
     heart.className = "heart";
