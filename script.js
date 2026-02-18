@@ -1,6 +1,6 @@
 // ⚠️ Дата начала отношений
 // Формат: ГОД, МЕСЯЦ-1, ДЕНЬ, ЧАС, МИНУТА
-const startDate = new Date(2025, 0, 1, 18, 30); // январь = 0
+const startDate = new Date(2025, 0, 0, 18, 30); // январь = 0
 
 function updateTimer() {
     const el = document.getElementById("timeTogether");
